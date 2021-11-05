@@ -1,10 +1,17 @@
 package com.example.javaspringcourse.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class User implements Serializable {
 
+    @Id   //Id is the primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //Id will be auto incremented
     private Long id;
     private String name;
     private String email;
